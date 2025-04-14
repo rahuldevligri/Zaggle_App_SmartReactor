@@ -1,0 +1,225 @@
+:root {
+    --primary: #842029;
+    --primary-hover: #842029;
+    --background: #f8fafc;
+    --text: #1e293b;
+    --face-size: 50px;
+    --face-inactive: #d1d5db;
+    --face-active: #f59e0b;
+    --face-hover: #fcd34d;
+    --face-hover: #fcd34d;
+}
+body {
+    background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.1)),
+                url('/static/images/zaggle_background.jpeg') center/cover no-repeat fixed;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.2;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    background-color: var(--background);
+    color: var(--text);
+    font-family: Custom;
+}
+h1 {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+    animation: fadeIn 1s;
+}
+.subtitle {
+    margin-top: -2rem;
+    margin-bottom: -1rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #475569;
+    text-align: center;
+    letter-spacing: 0.5px;
+    padding-top: 0rem;
+}
+.card {
+    backdrop-filter: blur(5px);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    animation: slideUp 0.5s ease;
+    position: relative;
+    top: 80px;
+}
+.form-group {
+    margin-bottom: 1.5rem;
+}
+label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    min-height: 120px;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+}
+textarea:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    transition: border-color 0.3s ease;
+}
+select:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+button {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+button:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+button.loading {
+    pointer-events: none;
+    opacity: 0.8;
+}
+.spinner {
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    margin-left: 8px;
+}
+.response-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-top: 2rem;
+    animation: fadeInUp 0.8s ease;
+    white-space: pre-line;
+    border-left: 4px solid var(--primary);
+}
+.response-card h3 {
+margin: 0 0 1rem;
+color: var(--primary);
+border-bottom: 2px solid var(--primary);
+padding-bottom: 0.5rem;
+}
+.contact-info {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #f3f4f6;
+    border-radius: 0.5rem;
+    border-left: 4px solid var(--primary);
+}
+.contact-info p {
+    margin: 0.5rem 0;
+}
+.header-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+.zaggle-logo {
+    height: 50px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+.zaggle-logo:hover {
+    transform: scale(1.05);
+}
+
+.faces-container {
+    display: flex;
+    gap: 12px;
+    margin: 0px 0;
+    justify-content: center;
+}
+.face-wrap {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.face {
+    font-size: var(--face-size);
+    color: var(--face-inactive);
+    transition: all 0.3s ease;
+    filter: grayscale(100%);
+    opacity: 0.6;
+}
+.face-wrap.active .face {
+    color: var(--face-active);
+    filter: none;
+    opacity: 1;
+    transform: scale(1.2);
+}
+.face-wrap:hover .face {
+    color: var(--face-hover);
+    transform: scale(1.3);
+    opacity: 1;
+    filter: none;
+}
+.rating-text {
+    margin-left: 8px;
+    font-weight: 500;
+    color: var(--face-active);
+    font-size: 1.1rem;
+    display: inline-block;
+}
+.label-inline {
+    display: flex;
+    gap: 2px;
+}
+
+@media (max-width: 480px) {
+    :root {
+        --face-size: 40px;
+    }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+@keyframes fadeInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@media (max-width: 480px) {
+    .card {
+        padding: 1.5rem;
+        top: 40px;
+    }
+    .star {
+        font-size: 28px;
+    } 
+    .zaggle-logo {
+        height: 40px;
+    }
+}

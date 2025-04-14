@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaggle App SmartReactor 🚀</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/zaggle.jpeg') }}" type="image/jpeg">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="card">
+        <header class="header-logo" role="banner" aria-label="Zaggle Review Response System">
+            <img src="/static/images/zaggle_logo.png"
+                 alt="Zaggle Logo" 
+                 class="zaggle-logo"
+                 aria-hidden="true">
+            <h1>App SmartReactor 🚀</h1>
+            <p class="subtitle">AI-powered Review Response Agent</p>
+        </header>
+        <form method="POST" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+                <label for="review">📝 User Review:</label>
+                <textarea 
+                    id="review" 
+                    name="review" 
+                    placeholder="Write the app review here..." 
+                    required
+                >{{ review_text if review_text }}</textarea>
+            </div>
+            <div class="form-group">
+                <div class="label-inline">
+                    <label>Rating:</label>
+                    <div class="rating-text" id="rating-text"></div>
+                </div>
+                <div class="rating-wrapper">
+                    <input type="hidden" id="rating-value" name="rating" value="0">
+                    <div class="faces-container" id="moonRating">
+                        <div class="face-wrap" data-value="1"><span class="face">🌑</span></div>
+                        <div class="face-wrap" data-value="2"><span class="face">🌘</span></div>
+                        <div class="face-wrap" data-value="3"><span class="face">🌗</span></div>
+                        <div class="face-wrap" data-value="4"><span class="face">🌖</span></div>
+                        <div class="face-wrap" data-value="5"><span class="face">🌕</span></div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" id="submitBtn">
+                {% if generating %}
+                    🎯 Generated Response
+                {% else %}
+                    ✨ Generate Response
+                {% endif %}
+            </button>
+        </form>
+
+        {% if response %}
+        <div class="response-card">
+            {% if rating is not none and rating >= 4 %}
+                🎯 Response Ready!
+            {% else %}
+                🛎️ Support Response
+            {% endif %}
+            <div class="response-content">
+                {{ response }}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
