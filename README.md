@@ -52,6 +52,22 @@ zaggle-app-smartreactor/
 ├── faqs.csv                  # Your FAQ database
 ├── requirements.txt
 └── README.md
-=======
-# My Project
->>>>>>> 04f70024 (Initial commit)
+```
+---
+
+## ⚡ Quick Start
+
+### 📦 Installation
+```bash
+# Clone repository
+git clone https://github.com/yourusername/zaggle-app-smartreactor.git
+cd zaggle-app-smartreactor
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Set up environment
+cp .env.example .env
+```
+
+
