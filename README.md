@@ -70,4 +70,41 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
+---
+
+## 🔧 Configuration
+```bash
+# .env
+OPENAI_API_KEY="your-api-key-here"
+```
+
+---
+
+##🚦 Running the App
+```bash
+# Start development server
+python app.py
+
+# Access the interface at
+http://localhost:5000
+```
+
+---
+
+## 🛠️ Usage Example
+```bash
+# Sample Input 📥
+{
+  "review": "App crashes during payment process",
+  "rating": 2
+}
+
+# SmartReactor Response 📤
+😟 We're sorry about your payment experience!
+
+① Clear app cache: Settings > Storage
+② Update to the latest version (v4.2+ required)
+③ Try an alternate payment method
+```
+
 
