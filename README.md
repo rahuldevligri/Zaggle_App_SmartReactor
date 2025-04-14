@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # ⚡️ Zaggle App SmartReactor 🤖🔥  
 **AI-Powered Smart Responder for App Reviews**
 
