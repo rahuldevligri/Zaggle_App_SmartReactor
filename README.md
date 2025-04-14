@@ -80,7 +80,7 @@ OPENAI_API_KEY="your-api-key-here"
 
 ---
 
-##🚦 Running the App
+## 🚦 Running the App
 ```bash
 # Start development server
 python app.py
