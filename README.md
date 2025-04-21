@@ -107,4 +107,20 @@ http://localhost:5000
 ③ Try an alternate payment method
 ```
 
+---
 
+## 🖼️ UI Screenshots
+
+### 🔍 Home Interface
+![Zaggle SmartReactor - Home Interface](static/images/1_UI.png)
+
+### 📝 Review Input Preview
+![Zaggle SmartReactor - Review Input](static/images/2_Review.png)
+
+### ⭐ Rating Display Preview
+![Zaggle SmartReactor - Rating Display](static/images/3_Rating.png)
+
+### 🤖 Response Generator Preview
+![Zaggle SmartReactor - Response Output](static/images/4_Response.png)
+
+---
